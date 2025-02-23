@@ -12,9 +12,7 @@ mongoose.connect("mongodb+srv://pachandiaryan:kIYEHHvtlC5s09NT@aryanpachandi.bew
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => {
-    res.send("Welcome to the server!")
-})
+
 app.post("/signup", async (req, res) => {
     const email = req.body.email
     const password = req.body.password
