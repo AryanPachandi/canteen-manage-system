@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
-const {model} = require("mongoose");
+
 
 const Schema = mongoose.Schema;
-const ObjectId = mongoose.Types.ObjectId;
+const  ObjectId = Schema.ObjectId;
 
 const userSchema = new Schema({
     email: { type: String },
@@ -12,14 +12,15 @@ const userSchema = new Schema({
 
 });
 const fooditemSchema = new Schema({
-    foodID:ObjectId,
+
     name: { type: String },
-    price: { type: Number },
-    category: { type: String },
-    available : { type: Boolean },
+    price: { type: Number , required: true , min:0 },
+    category: { type: String , required: true },
+    available : { type: Boolean , default: true },
+    adminID: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
 })
 const ordersSchema = new Schema({
-    studentID:{type: mongoose.Types.ObjectId, ref: 'User'},
+    studentID: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     items : [{
         foodID:{
             type: mongoose.Schema.Types.ObjectId,
