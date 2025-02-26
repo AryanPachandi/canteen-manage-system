@@ -126,6 +126,35 @@ app.delete("/delete-product/:id", authforadmin, async (req, res) => {
         })
     }
 })
+
+// app.post("/update-product/:id", authforadmin, async (req, res) => {
+//     const updateID = req.params.id;
+//     try {
+//         const resul
+//     }
+// })
+
+app.post("order/student", authforstudent, async (req, res) => {
+    const studentID = req.studentID;
+    const foodID = req.body.foodID;
+
+    const product = await fooditemModel.findById(foodID);
+
+    if(!product || !product.available){
+        return res.status(404).json({
+            msg:"product not found or unavailable"
+        })
+    }
+    const price = product.price;
+    const adminID = product.adminID;
+
+    const order = await ordersInfoModel.create({
+        studentID:studentID,
+        foodID:foodID,
+        produc
+    })
+})
+
 app.listen(3000, () => {
     console.log("Server started on port 3000")
 })

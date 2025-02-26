@@ -23,7 +23,9 @@ const ordersSchema = new Schema({
     studentID: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     items : [{
         foodID:{
+
             type: mongoose.Schema.Types.ObjectId,
+            ref: 'Fooditem',
             required: true,
         },
         name:{
@@ -52,7 +54,7 @@ const ordersSchema = new Schema({
         type:String,
         default:null,
     },
-    qr_code:{type:String,default:null},
+
     created_at:{type:Date, default:Date.now},
 }, { timestamps: true });
 
