@@ -150,8 +150,17 @@ app.post("order/student", authforstudent, async (req, res) => {
 
     const order = await ordersInfoModel.create({
         studentID:studentID,
-        foodID:foodID,
-        produc
+
+        items:[
+            {
+                foodID: foodID,
+                name: product.name,
+                quantity: product.quantity,
+                price: price,
+            }
+        ],
+        totalPrice:product.price,
+
     })
 })
 

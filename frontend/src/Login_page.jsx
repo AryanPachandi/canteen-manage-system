@@ -1,11 +1,15 @@
+import photo from "./assets/login.jpg"
 import { useState } from "react";
+
 
  function LoginPage() {
     const [isSignUp, setIsSignUp] = useState(false);
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-green-200">
-            <div className="bg-white p-6 rounded-2xl shadow-xl w-96">
+        <div className="flex items-center justify-center min-h-screen bg-green-200 relative w-full h-screen  bg-cover bg-center"
+             style={{ backgroundImage: `url(${photo})` }}
+        >
+            <div className="bg-[#EADDCA] p-6 rounded-2xl shadow-xl w-96">
                 {/* Title */}
                 <h2 className="text-2xl font-bold text-center text-gray-700">
                     {isSignUp ? "Sign Up" : "Sign In"}
@@ -19,7 +23,7 @@ import { useState } from "react";
                             <label className="block text-gray-600">Full Name</label>
                             <input
                                 type="text"
-                                className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#321E1E]"
                             />
                         </div>
                     )}
@@ -29,7 +33,7 @@ import { useState } from "react";
                         <label className="block text-gray-600">Email</label>
                         <input
                             type="email"
-                            className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#321E1E]"
                         />
                     </div>
 
@@ -38,13 +42,13 @@ import { useState } from "react";
                         <label className="block text-gray-600">Password</label>
                         <input
                             type="password"
-                            className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#321E1E]"
                         />
                     </div>
 
                     {/* Submit Button */}
                     <button
-                        className="w-full bg-blue-600 text-white py-2 rounded-md mt-6 hover:bg-blue-800 transition"
+                        className="w-full bg-[#AB886D] text-white py-2 rounded-md mt-6 hover:bg-[#481E14] transition"
                     >
                         Submit
                     </button>
@@ -54,7 +58,7 @@ import { useState } from "react";
                 <p className="text-center text-gray-600 mt-4">
                     {isSignUp ? "Already have an account?" : "New here?"}
                     <button
-                        className="text-blue-600 font-bold hover:underline ml-1"
+                        className="text-[#6D2932] font-bold hover:underline ml-1"
                         onClick={() => setIsSignUp(!isSignUp)}
                     >
                         {isSignUp ? "Sign In" : "Sign Up"}

@@ -4,15 +4,16 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import LoginPage from "./Login_page.jsx";
 import LandingPage from "./LandingPage.jsx";
-
+import StudentDashboard from "./StudentDashboard.jsx";
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-        {/*<LoginPage/>*/}
         <LandingPage  />
+        <LoginPage/>
+        <StudentDashboard />
     </>
   )
 }
